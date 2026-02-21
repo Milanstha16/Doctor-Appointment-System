@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MediCare - Book Appointment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/appointment.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">MediCare</div>
+        <div id="hamburger">☰</div>
+
+        <nav id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="appointment.html" class="active">Book Appointment</a>
+            <a href="dashboard.html">My Appointments</a>
+            <span id="userArea"></span>
+        </nav>
+    </header>
+
+    <section class="booking">
+        <h1>Book Appointment</h1>
+
+        <form id="appointmentForm" class="appointment-form">
+
+            <label>Department *</label>
+            <select id="department" required>
+                <option value="">Select Department</option>
+                <option value="Cardiology">Cardiology</option>
+                <option value="Dermatology">Dermatology</option>
+                <option value="Orthopedics">Orthopedics</option>
+            </select>
+
+            <label>Doctor *</label>
+            <select id="doctor" required disabled>
+                <option value="">Select Doctor</option>
+            </select>
+
+            <label>Date *</label>
+            <input type="date" id="date" required disabled>
+
+            <label>Time *</label>
+            <select id="time" required disabled>
+                <option value="">Select Time</option>
+            </select>
+
+            <label>Appointment Type *</label>
+            <div class="radio-group">
+                <label><input type="radio" name="type" value="In-Person" required> In-Person</label>
+                <label><input type="radio" name="type" value="Online"> Online</label>
+            </div>
+
+            <label>Symptoms / Notes</label>
+            <textarea id="notes" maxlength="200" placeholder="Describe your symptoms..."></textarea>
+            <small id="charCount">0 / 200</small>
+
+            <button type="submit" class="btn" id="submitBtn">
+                <span id="btnText">Book Appointment</span>
+                <span id="loader" class="loader hidden"></span>
+            </button>
+
+        </form>
+
+        <div id="message" class="message"></div>
+    </section>
+
+    <script src="js/appointment.js"></script>
+</body>
+
+</html>
