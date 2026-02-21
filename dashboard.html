@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MediCare - Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <header id="navbar">
+        <div class="logo">MediCare</div>
+
+        <nav id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="appointment.html">Book Appointment</a>
+            <a href="dashboard.html" class="active">My Appointments</a>
+            <span id="userArea"></span>
+        </nav>
+    </header>
+
+    <section class="dashboard">
+        <h1 class="welcome-text">
+            Welcome back, <span id="usernameDisplay"></span>
+        </h1>
+        <div class="dashboard-grid">
+
+            <div class="card">
+                <h3>Total Appointments</h3>
+                <p class="big-number" id="totalAppointments">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Upcoming</h3>
+                <p class="big-number" id="upcomingAppointments">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Completed</h3>
+                <p class="big-number" id="completedAppointments">0</p>
+            </div>
+
+        </div>
+
+        <div class="controls">
+
+            <input type="text" id="searchInput" placeholder="Search by doctor or department...">
+
+            <select id="filterStatus">
+                <option value="all">All</option>
+                <option value="upcoming">Upcoming</option>
+                <option value="completed">Completed</option>
+            </select>
+
+            <select id="sortBy">
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+            </select>
+
+        </div>
+
+        <div class="appointments-section">
+            <h2>Your Appointments</h2>
+
+            <div id="appointmentList" class="appointment-list">
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
