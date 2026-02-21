@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
     const username = localStorage.getItem("loggedInUser");
 
-    /* Reveal Animation (Optimized) */
+// Reveal Animation (Optimized)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -20,14 +20,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
-    /* Hamburger */
+// Hamburger
     if (hamburger) {
         hamburger.addEventListener("click", () => {
             navMenu.classList.toggle("active");
         });
     }
 
-    /* Toast Function */
+// Toast Function
     function showToast(message) {
         toast.textContent = message;
         toast.classList.add("show");
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 2500);
     }
 
-    /* Book Button */
+// Book Button
     if (bookBtn) {
         bookBtn.addEventListener("click", function () {
             if (isLoggedIn) {
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    /* Navbar User Display (Safe DOM Rendering) */
+// Navbar User Display (Safe DOM Rendering)
     if (userArea) {
 
         if (isLoggedIn && username) {
